@@ -1,8 +1,17 @@
 # Cucumber + Selenium + Spring Boot POK (single-thread)
 
 POK implemented with the latest versions of Cucumber + Selenium + Spring Boot + JDK (21). It allows to make automated
-tests for a web application (in this case the target is my portfolio https://andre-i.eu). 
-See also the [multi-thread](https://github.com/goto-eof/andre-i-test-selenium-cucumber-spring-boot-multi-thread) version.
+tests for a web application (in this case the target is my portfolio https://andre-i.eu).
+See also the [multi-thread](https://github.com/goto-eof/andre-i-test-selenium-cucumber-spring-boot-multi-thread)
+version.
+
+# Run tests
+
+Run the following command from the root of the project:
+
+```
+ ./gradlew clean test
+```
 
 # Moreover
 
