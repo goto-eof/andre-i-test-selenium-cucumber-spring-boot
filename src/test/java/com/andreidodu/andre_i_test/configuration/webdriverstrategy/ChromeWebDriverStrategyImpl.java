@@ -16,7 +16,7 @@ public class ChromeWebDriverStrategyImpl implements WebDriverStrategy {
     public static final String BROWSER_NAME = "chrome";
     public static final String CAPABILITY_PROXY = "proxy";
 
-    @Value("${filename.web-driver.chrome}")
+    @Value("${com.andreidodu.test.filename.web-driver.chrome}")
     private String webDriverChrome;
 
     @Value("${com.andreidodu.test.os}")

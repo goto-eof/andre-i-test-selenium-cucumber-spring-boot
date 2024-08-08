@@ -18,7 +18,7 @@ public class FirefoxWebDriverStrategyImpl implements WebDriverStrategy {
     public static final String BROWSER_NAME = "firefox";
     public static final String CAPABILITY_PROXY = "proxy";
 
-    @Value("${filename.web-driver.firefox}")
+    @Value("${com.andreidodu.test.filename.web-driver.firefox}")
     private String webDriverChrome;
 
     @Value("${com.andreidodu.test.os}")
