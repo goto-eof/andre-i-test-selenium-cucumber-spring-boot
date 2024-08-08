@@ -4,6 +4,9 @@ import org.openqa.selenium.Proxy;
 
 public class WebDriverUtil {
 
+    public static final String OS_WINDOWS = "windows";
+    public static final String FILE_EXTENSION_EXE = ".exe";
+
     public static Proxy buildProxy() {
         Proxy proxy = new Proxy();
         proxy.setAutodetect(false);
@@ -12,8 +15,8 @@ public class WebDriverUtil {
     }
 
     public static String calculateExtension(String os) {
-        if ("windows".equalsIgnoreCase(os)) {
-            return ".exe";
+        if (OS_WINDOWS.equalsIgnoreCase(os)) {
+            return FILE_EXTENSION_EXE;
         }
         return "";
     }
