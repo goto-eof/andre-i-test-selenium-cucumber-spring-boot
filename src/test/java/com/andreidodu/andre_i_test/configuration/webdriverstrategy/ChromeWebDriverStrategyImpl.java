@@ -1,0 +1,37 @@
+package com.andreidodu.andre_i_test.configuration.webdriverstrategy;
+
+import com.andreidodu.andre_i_test.configuration.webdriverstrategy.common.WebDriverUtil;
+import com.andreidodu.andre_i_test.constants.ConfigurationConstants;
+import org.openqa.selenium.PageLoadStrategy;
+import org.openqa.selenium.Proxy;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
+public class ChromeWebDriverStrategyImpl implements WebDriverStrategy {
+
+    public static final String BROWSER_NAME = "chrome";
+    public static final String CAPABILITY_PROXY = "proxy";
+
+    @Value("${filename.web-driver.chrome}")
+    private String webDriverChrome;
+
+    @Override
+    public boolean accept(String browserName) {
+        return (BROWSER_NAME.equalsIgnoreCase(browserName));
+    }
+
+    @Override
+    public WebDriver buildDriver() {
+        System.setProperty(ConfigurationConstants.WEB_DRIVER_CHROME_DRIVER, webDriverChrome);
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.setPageLoadStrategy(PageLoadStrategy.EAGER);
+        Proxy proxy = WebDriverUtil.buildProxy();
+        chromeOptions.setCapability(CAPABILITY_PROXY, proxy);
+        return new ChromeDriver(chromeOptions);
+    }
+
+}

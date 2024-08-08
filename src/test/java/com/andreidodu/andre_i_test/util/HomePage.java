@@ -1,6 +1,7 @@
 package com.andreidodu.andre_i_test.util;
 
 import com.andreidodu.andre_i_test.configuration.WebDriverConfiguration;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.awaitility.Durations;
 import org.openqa.selenium.By;
@@ -14,20 +15,23 @@ import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
+@RequiredArgsConstructor
 public class HomePage {
 
     @Value("${application.url}")
     private String baseURL;
 
-    @Autowired
-    private WebDriverConfiguration webDriverConfiguration;
+    @Value("${browser}")
+    private String browser;
+
+    private final WebDriverConfiguration webDriverConfiguration;
 
     private final static String SEARCH_BOX_ID = "field-:r1h:";
 
     private WebDriver driver;
 
     public HomePage goToHomePage() {
-        this.driver = webDriverConfiguration.createNewWebDriver();
+        this.driver = webDriverConfiguration.createNewWebDriver(browser);
         driver.get(baseURL);
         return this;
     }
