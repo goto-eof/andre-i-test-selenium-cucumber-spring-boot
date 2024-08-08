@@ -10,11 +10,11 @@ version.
 Edit `config.properties` by choosing your OS and browser:
 
 ```
-# could be linux or windows
-com.andreidodu.test.os=linux
-
-# could be firefox or chrome
+# can be chrome or firefox
 com.andreidodu.test.browser=chrome
+
+# can be linux or windows
+com.andreidodu.test.os=linux
 ```
 
 # Run tests
