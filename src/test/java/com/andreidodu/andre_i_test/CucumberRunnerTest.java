@@ -1,4 +1,4 @@
-package com.andreidodu.andre_i_test.configuration;
+package com.andreidodu.andre_i_test;
 
 import com.andreidodu.andre_i_test.constants.ConfigurationConstants;
 import org.junit.platform.suite.api.ConfigurationParameter;
