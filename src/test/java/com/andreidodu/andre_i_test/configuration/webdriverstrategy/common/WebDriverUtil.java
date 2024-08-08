@@ -11,4 +11,11 @@ public class WebDriverUtil {
         return proxy;
     }
 
+    public static String calculateExtension(String os) {
+        if ("windows".equalsIgnoreCase(os)) {
+            return ".exe";
+        }
+        return "";
+    }
+
 }

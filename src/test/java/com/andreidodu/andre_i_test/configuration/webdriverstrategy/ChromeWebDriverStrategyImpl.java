@@ -19,6 +19,9 @@ public class ChromeWebDriverStrategyImpl implements WebDriverStrategy {
     @Value("${filename.web-driver.chrome}")
     private String webDriverChrome;
 
+    @Value("${os}")
+    private String os;
+
     @Override
     public boolean accept(String browserName) {
         return (BROWSER_NAME.equalsIgnoreCase(browserName));
@@ -26,12 +29,13 @@ public class ChromeWebDriverStrategyImpl implements WebDriverStrategy {
 
     @Override
     public WebDriver buildDriver() {
-        System.setProperty(ConfigurationConstants.WEB_DRIVER_CHROME_DRIVER, webDriverChrome);
+        System.setProperty(ConfigurationConstants.WEB_DRIVER_CHROME_DRIVER, webDriverChrome + WebDriverUtil.calculateExtension(os));
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.setPageLoadStrategy(PageLoadStrategy.EAGER);
         Proxy proxy = WebDriverUtil.buildProxy();
         chromeOptions.setCapability(CAPABILITY_PROXY, proxy);
         return new ChromeDriver(chromeOptions);
     }
+
 
 }

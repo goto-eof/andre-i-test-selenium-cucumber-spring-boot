@@ -21,6 +21,9 @@ public class FirefoxWebDriverStrategyImpl implements WebDriverStrategy {
     @Value("${filename.web-driver.firefox}")
     private String webDriverChrome;
 
+    @Value("${os}")
+    private String os;
+
     @Override
     public boolean accept(String browserName) {
         return (BROWSER_NAME.equalsIgnoreCase(browserName));
@@ -28,7 +31,7 @@ public class FirefoxWebDriverStrategyImpl implements WebDriverStrategy {
 
     @Override
     public WebDriver buildDriver() {
-        System.setProperty(ConfigurationConstants.WEB_DRIVER_GECKO_DRIVER, webDriverChrome);
+        System.setProperty(ConfigurationConstants.WEB_DRIVER_GECKO_DRIVER, webDriverChrome + WebDriverUtil.calculateExtension(os));
         FirefoxOptions firefoxOptions = new FirefoxOptions();
         Proxy proxy = WebDriverUtil.buildProxy();
         firefoxOptions.setCapability(CAPABILITY_PROXY, proxy);

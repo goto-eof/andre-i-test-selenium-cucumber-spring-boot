@@ -1,5 +1,6 @@
 package com.andreidodu.andre_i_test.step;
 
+import com.andreidodu.andre_i_test.util.HomePage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -8,8 +9,6 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import com.andreidodu.andre_i_test.util.HomePage;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
@@ -25,7 +24,6 @@ public class SearchEngineStep {
     @Given("the status of the data has as value {string}")
     public void settingStatus(String status) {
         log.info("setting status to {}", status);
-
         log.info("updating item status with value {}", status);
         log.info("status updated successfully");
     }
