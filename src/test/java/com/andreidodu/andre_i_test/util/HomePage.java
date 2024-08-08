@@ -21,7 +21,7 @@ public class HomePage {
     @Value("${application.url}")
     private String baseURL;
 
-    @Value("${browser}")
+    @Value("${com.andreidodu.test.browser}")
     private String browser;
 
     private final WebDriverConfiguration webDriverConfiguration;

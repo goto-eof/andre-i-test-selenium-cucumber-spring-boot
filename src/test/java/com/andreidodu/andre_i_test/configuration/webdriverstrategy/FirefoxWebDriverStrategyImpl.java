@@ -21,7 +21,7 @@ public class FirefoxWebDriverStrategyImpl implements WebDriverStrategy {
     @Value("${filename.web-driver.firefox}")
     private String webDriverChrome;
 
-    @Value("${os}")
+    @Value("${com.andreidodu.test.os}")
     private String os;
 
     @Override
