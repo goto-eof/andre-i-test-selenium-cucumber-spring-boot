@@ -1,6 +1,6 @@
-package com.andreidodu.andre_i_test.configuration.webdriverstrategy;
+package com.andreidodu.andre_i_test.util.webdriverstrategy;
 
-import com.andreidodu.andre_i_test.configuration.webdriverstrategy.common.WebDriverUtil;
+import com.andreidodu.andre_i_test.util.webdriverstrategy.common.WebDriverUtil;
 import com.andreidodu.andre_i_test.constants.ConfigurationConstants;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.Proxy;

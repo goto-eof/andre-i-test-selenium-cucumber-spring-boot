@@ -1,12 +1,9 @@
-package com.andreidodu.andre_i_test.configuration.webdriverstrategy;
+package com.andreidodu.andre_i_test.util.webdriverstrategy;
 
-import com.andreidodu.andre_i_test.configuration.webdriverstrategy.common.WebDriverUtil;
+import com.andreidodu.andre_i_test.util.webdriverstrategy.common.WebDriverUtil;
 import com.andreidodu.andre_i_test.constants.ConfigurationConstants;
-import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.springframework.beans.factory.annotation.Value;

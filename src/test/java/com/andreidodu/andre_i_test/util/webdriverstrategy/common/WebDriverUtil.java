@@ -1,4 +1,4 @@
-package com.andreidodu.andre_i_test.configuration.webdriverstrategy.common;
+package com.andreidodu.andre_i_test.util.webdriverstrategy.common;
 
 import org.openqa.selenium.Proxy;
 

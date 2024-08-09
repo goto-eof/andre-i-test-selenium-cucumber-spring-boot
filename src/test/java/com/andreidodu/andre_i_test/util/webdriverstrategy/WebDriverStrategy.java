@@ -1,4 +1,4 @@
-package com.andreidodu.andre_i_test.configuration.webdriverstrategy;
+package com.andreidodu.andre_i_test.util.webdriverstrategy;
 
 import org.openqa.selenium.WebDriver;
 
