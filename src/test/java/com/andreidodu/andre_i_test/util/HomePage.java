@@ -24,7 +24,7 @@ public class HomePage {
 
     private final WebDriverBuilder webDriverBuilder;
 
-    private final static String SEARCH_BOX_ID = "field-:r1h:";
+    private final static String SEARCH_BOX_ID = "toy-search-field";
 
     private WebDriver driver;
 

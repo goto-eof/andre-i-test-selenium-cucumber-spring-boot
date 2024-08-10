@@ -19,7 +19,7 @@ public class SearchEngineStep {
     @Autowired
     private HomePage homePage;
 
-    private final By searchResultElement = By.cssSelector("#toys > div > div > div > div.chakra-stack.css-j7qwjs > div.css-3fl6io > div > div > div.chakra-stack.css-a8n2v6 > div > p");
+    private final By searchResultElement = By.cssSelector("#toys div.toy-wrapper p.toy-name");
 
     @Given("the status of the data has as value {string}")
     public void settingStatus(String status) {
@@ -46,7 +46,11 @@ public class SearchEngineStep {
         log.info("checking the result, it should be {}", result);
         try {
             String textRead = this.homePage.readTextMessage(searchResultElement);
-            assertEquals(result, textRead);
+            if (!result.equals(textRead)) {
+                log.error("result: test failed\nexpected: {}\nfound: {}\n\n", result, textRead);
+                this.homePage.quit();
+                fail();
+            }
             this.homePage.quit();
             log.info("the result is correct.");
         } catch (NoSuchElementException e) {
